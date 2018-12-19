@@ -5,21 +5,21 @@ def badge_maker(attendees)
 end
 
 def batch_badge_creator(attendees)
-  i = 0
-  attendees.collect do |person|
-      attendees[i] = badge_maker(person)
+  i, j = 0, []
+  attendees.each do |person|
+      j << badge_maker(person)
       i += 1
   end
-  attendees
+  j
 end
 
 def assign_rooms(attendees)
-  i=0
-  attendees.collect do |person|
-    attendees[i] = "Hello, #{person}! You'll be assigned to room #{i+1}!"
+  i, j = 0, []
+  attendees.each do |person|
+    j << "Hello, #{person}! You'll be assigned to room #{i+1}!"
     i+=1
   end
-  attendees
+  j
 end
 
 def printer(attendees)
