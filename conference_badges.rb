@@ -5,17 +5,19 @@ def badge_maker(attendees)
 end
 
 def batch_badge_creator(attendees)
-  counter = attendees.count - 1;
-    for i in 0..counter
-      attendees[i] = badge_maker(attendees[i])
-    end
-  return attendees
+  i = 0
+  attendees.each do |person|
+      attendees[i] = badge_maker(person)
+      i += 1
+  end
+  attendees
 end
 
 def assign_rooms(attendees)
-  counter = attendees.count - 1
-  for i in 0..counter
+  i=0
+  attendees.each do |person|
     attendees[i] = "Hello, #{attendees[i]}! You'll be assigned to room #{i+1}!"
+    i+=1
   end
   return attendees
 end
