@@ -23,9 +23,7 @@ def assign_rooms(attendees)
 end
 
 def printer(attendees)
-  i=0
-  j = batch_badge_creator(attendees)
-  k = assign_rooms(attendees)
+  i, j, k= 0, batch_badge_creator(attendees), assign_rooms(attendees)
   while i < attendees.size
     puts j[i]
     puts k[i]
